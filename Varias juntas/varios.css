@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    background-color: #151515;
+    display: grid;
+    place-content: center;
+    font-size: 14px;
+    padding: 100px;
+
+}
+.contenedor{
+    overflow: hidden;
+    margin: 1px;
+    padding: 1px;
+    overflow: hidden;
+}
+
+.title{
+    color:#fff;
+    text-transform: uppercase;
+    line-height: 40px;
+    font-weight: 300;
+    float: left;
+    margin: 2px;
+}
+
+.title-content{
+    display: block;
+    opacity: 0;
+    animation: revealText .5s forwards;
+}
+
+.title-second{
+    animation-delay: .175s ;
+}
+
+.title-third{
+    animation-delay: .25s;
+    
+}
+.title-fourth{
+    animation-delay: .325s;
+}
+
+@keyframes revealText{
+    from{
+        transform:translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Otra variante*/
+
+.list1 {
+    margin: 2px;
+    float: left;
+    list-style: none;
+    text-align: center;
+    position:relative;
+}
+.link{
+    display: inline-block;
+    margin-block: 2px;
+    text-decoration: none;
+    color: #fff;
+    position:relative;
+}
+
+.link::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #fed86b;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+}
+
+.link:hover::after{
+    transform: scaleX(1);
+}
+
+/*Css de Img*/
+
+.card{
+    margin: 2px;
+    float: left;
+    width: 150px; 
+    height: 200px ;
+    background-color: #333;
+    border-radius: 10px;
+    outline: 1px solid 
+    rgba(255, 255, 255, .5); 
+    outline-offset: -8px;
+    box-shadow: 3px 3px 10px
+    rgba(0, 0, 0, .1);
+    position: relative;
+    overflow: hidden;
+}
+.card-img{
+   
+    position: absolute;
+    inset: 0; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .6;
+    transition: transform .75s;
+}
+.card:hover .card-img{
+    transform: scale(1.15);
+}
+.card-tit{
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 0 0 1px 
+    rgba(0, 0, 0, .5);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.icons-wrapper{
+    position: relative;
+    float: left;
+    margin: 2px;
+    margin-top: 10px;
+}
+
+.icons-wrapper::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: rgb(37, 37, 37);
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+.icon{ 
+    display: inline-block;
+    font-size: 44px;
+    animation: float 5s ease-in-out infinite;
+}
+.ri-instagram-line{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ri-facebook-circle-line { 
+    animation-delay: 1s;
+    color: #1877f2;
+}
+
+.ri-whatsapp-line {
+    animation-delay: 2s;
+    color: #25d366;
+}
+
+@keyframes float {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.botton{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    outline: 4px double #fff;
+    padding: 30px 60px;
+    position: relative;
+    overflow: hidden;
+    transition: color 1s;
+    margin: 2px;
+    float: left;
+    
+}
+
+.botton:hover{
+    color:black;
+}
+
+.botton::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    transform: skewX(35deg);
+    z-index: -1;
+    transition: width 1s;
+
+}
+
+.botton:hover::before{
+    width:150%;
+}
+
+
+.container{
+    max-width: 960px; /*Limits the width of the container but let's it get smaller if needed.*/
+    margin: 0 auto; /*Center the container horizontally in the middle of the page.*/
+    padding: 12px;
+}
+.navbar{
+    display: flex;
+    flex-wrap: wrap; /*Allows the children inside a flex container to wrap down onto the next line if there is not enough space.*/
+    align-items: center; /*Centers the children of a flex container vertically.*/
+    justify-content: space-between; /*Adds space between each child of a flex container.*/
+    background-color: #fff;
+    padding-block: 15px; /*Padding top and bottom*/
+}
+.navbar a{
+    text-decoration: none;
+    color: inherit; /*Inherits the same color as the parent element or grandparent (the body) unless you set the color to the navbar.*/
+}
+.logo{
+    margin-right: 50px;
+}
+.list{
+    list-style: none;
+    display: flex;
+    gap: 25px; /*Applies right and bottom spacing between children inside a flex or grid container.*/
+}
+#toggler,
+.navbar label{
+    display: none;/*Hide the checkbox and label on large screens.*/
+}
+/*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/
+@media screen and 
+(max-width: 600px){
+    .menu{
+        width: 100%;
+        max-height: 0; /*Makes the max-height 0 to side the expanded menu.*/
+        overflow: hidden; /*Hides the overflowing content.*/
+    }
+    .list{
+        flex-direction: column; /*Chances the direction of the flex container. By default it is a row so we change it to column in small screens.*/
+        align-items: center;
+        padding: 20px;
+    }
+    .navbar label{
+        display: inline-flex; /*Makes it an inline flex container for the icon. Used for centering the icon inside this box.*/
+        align-items: center;
+        cursor: pointer;
+    }
+    /* 
+        The general sibling selector (~) selects all elements that are next siblings of #toggler.
+        In this case we target the .menu and we turn the height back to 100% to show the menu.
+    */
+    #toggler:checked ~ .menu{
+        max-height: 100%;
+    }
+}
+
+.carda{
+    color: #fff;
+    text-align: center;
+    background-color: #151515;
+    padding: 25px;
+    border-radius: 8px;
+    position: relative;
+    margin: 10px;
+    float: left;
+}
+.card-plan{
+    font-size: 16px;
+}
+.carda::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    transform: translate(-4px, -4px);
+    background: linear-gradient(60deg, #5ff281, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f) 0 50%;
+    background-size: 300% 300%; 
+    animation:  gradient-animation 2.5s alternate infinite;
+    border-radius: 8px;
+    z-index: -1;
+}
+.card-title{
+    font-size: 45px;
+    margin-block: 25px;
+}
+.card-title span{
+    font-size: 16px;
+}
+.card-button{
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+
+@keyframes gradient-animation {
+    50%{
+        background-position: 100% 50%;
+    }
+}
